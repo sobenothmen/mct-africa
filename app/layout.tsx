@@ -4,6 +4,7 @@ import "./globals.css";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { site } from "@/lib/content";
+import { getSiteUrl } from "@/lib/seo";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,20 +16,60 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl = getSiteUrl();
+
 export const metadata: Metadata = {
+  metadataBase: siteUrl ? new URL(siteUrl) : undefined,
+  applicationName: site.name,
   title: {
     default: `${site.name} — ${site.fullName}`,
     template: `%s — ${site.name}`,
   },
   description:
     "Mekadmini Cherif Trading (MCT) — distributeur de franchises internationales en Mauritanie et au Sénégal : Parfois, Celio, Zippy, Beauty Success, Women’Secret.",
+  keywords: [
+    "MCT",
+    "Mekadmini Cherif Trading",
+    "franchises Mauritanie",
+    "retail Nouakchott",
+    "Parfois Mauritanie",
+    "Celio Mauritanie",
+    "Zippy Mauritanie",
+    "Beauty Success Mauritanie",
+    "Women'Secret Mauritanie",
+  ],
+  alternates: siteUrl
+    ? {
+        canonical: "/",
+      }
+    : undefined,
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   openGraph: {
     title: `${site.name} — ${site.fullName}`,
     description:
       "Commerce de détail et franchises internationales à Nouakchott et dans la région.",
+    url: siteUrl,
+    siteName: site.name,
     locale: "fr_MR",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: `${site.name} — ${site.fullName}`,
+    description:
+      "Distributeur de franchises internationales en Mauritanie et au Sénégal : mode, beauté et retail premium.",
+  },
+  category: "business",
 };
 
 export default function RootLayout({

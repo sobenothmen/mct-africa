@@ -10,10 +10,54 @@ import {
   visionMission,
 } from "@/lib/content";
 import { RichParagraph } from "@/components/rich-text";
+import { absoluteUrl } from "@/lib/seo";
 
 export default function Home() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: site.fullName,
+    alternateName: site.name,
+    url: absoluteUrl("/"),
+    logo: absoluteUrl("/icon"),
+    description:
+      "Distributeur de franchises internationales en Mauritanie et au Sénégal dans les secteurs mode, beauté et retail.",
+    foundingDate: "2017",
+    areaServed: ["MR", "SN"],
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: contact.addressLines[0],
+      addressLocality: "Nouakchott",
+      addressCountry: "MR",
+    },
+    contactPoint: [
+      ...contact.phones.map((phone) => ({
+        "@type": "ContactPoint",
+        telephone: phone,
+        contactType: "customer service",
+        areaServed: ["MR", "SN"],
+        availableLanguage: ["fr"],
+      })),
+      ...contact.emails.map((email) => ({
+        "@type": "ContactPoint",
+        email,
+        contactType: "customer service",
+        areaServed: ["MR", "SN"],
+        availableLanguage: ["fr"],
+      })),
+    ],
+    knowsAbout: brands.map((brand) => brand.name),
+  };
+
   return (
-    <main>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
+      <main>
       <section
         id="accueil"
         className="relative flex min-h-[85vh] items-end overflow-hidden bg-zinc-900"
@@ -329,6 +373,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-    </main>
+      </main>
+    </>
   );
 }
