@@ -1,0 +1,32 @@
+import { ImageResponse } from "next/og";
+
+export const size = {
+  width: 32,
+  height: 32,
+};
+
+export const contentType = "image/png";
+
+export default function Icon() {
+  return new ImageResponse(
+    (
+      <div
+        style={{
+          alignItems: "center",
+          background: "#0f172a",
+          color: "#f8fafc",
+          display: "flex",
+          fontSize: 12,
+          fontWeight: 700,
+          height: "100%",
+          justifyContent: "center",
+          letterSpacing: "-0.5px",
+          width: "100%",
+        }}
+      >
+        MCT
+      </div>
+    ),
+    size,
+  );
+}
