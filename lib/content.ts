@@ -1,7 +1,10 @@
 export const site = {
-  name: "MCT",
-  /** Raison sociale (métadonnées, pied de page) */
-  fullName: "Mekadmini Cherif Trading",
+  /** Marque affichée publiquement */
+  name: "MCT Holding",
+  /** Sigle court utilisé pour l'icône et les variantes courtes */
+  shortName: "MCT",
+  /** Raison sociale / dénomination légale */
+  legalName: "Mekadmini Cherif Trading",
   /** Ligne sous le logo (affichée en capitales sur le site) */
   headerLegalLine: "MEKADMINI CHERIF TRADING",
   locale: "fr-MR",
@@ -19,7 +22,7 @@ export const nav = [
 export const introParagraphs = [
   "M.C.T est une société SARL fondée en 2017 en Mauritanie par deux associés, chacun avec sa propre expertise. Nous avons débuté en ouvrant une parfumerie de luxe, **Parfumerie Fashion**, où l’on trouve les grandes marques. La même année, nous avons acquis la franchise **Parfois**, suivie de **Celio** en 2019.",
   "En 2021, nous avons lancé **Zippy**, spécialisée dans les produits pour bébés et nourrissons. En 2023, nous avons inauguré le premier institut de beauté en Mauritanie avec la franchise **Beauty Success** (parfumerie & institut). Nous avons signé avec le groupe espagnol **Tendam** pour l’enseigne **Women’Secret** (2026). Nous sommes également au **Sénégal** avec **Parfois**.",
-  "Avec une équipe d’environ 50 collaborateurs, notre chiffre d’affaires dépasse **1 million d’euros**, témoignant de notre croissance. En tant que pionniers dans l’acquisition de franchises internationales, nous développons continuellement notre gamme de choix.",
+  "Avec une équipe d’environ 50 collaborateurs, nous poursuivons notre croissance en tant que pionniers dans l’acquisition de franchises internationales et développons continuellement notre gamme de choix.",
 ];
 
 export const heritage = {
@@ -73,7 +76,7 @@ export const brands: Brand[] = [
     imageAlt: "Mode masculine Celio",
     body: [
       "En 2019, nous avons acquis la franchise Celio : une étape majeure, un succès sur les plans financier et commercial.",
-      "Nous avons élargi notre offre, attiré de nouveaux clients et fidélisé notre base. Notre magasin a connu une forte augmentation de fréquentation — triplement du nombre de clients par rapport à l’année précédente — et un doublement du chiffre d’affaires.",
+      "Nous avons élargi notre offre, attiré de nouveaux clients et fidélisé notre base. Notre magasin a connu une forte augmentation de fréquentation, avec un triplement du nombre de clients par rapport à l’année précédente.",
       "Objectif : positionner Celio comme une référence incontournable de la mode masculine, avec des actions marketing ciblées pour la visibilité et la réputation de la marque.",
     ],
   },

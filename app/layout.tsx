@@ -22,14 +22,16 @@ export const metadata: Metadata = {
   metadataBase: siteUrl ? new URL(siteUrl) : undefined,
   applicationName: site.name,
   title: {
-    default: `${site.name} — ${site.fullName}`,
+    default: `${site.name} — ${site.legalName}`,
     template: `%s — ${site.name}`,
   },
   description:
-    "Mekadmini Cherif Trading (MCT) — distributeur de franchises internationales en Mauritanie et au Sénégal : Parfois, Celio, Zippy, Beauty Success, Women’Secret.",
+    "MCT Holding, groupe Mekadmini Cherif Trading — distributeur de franchises internationales en Mauritanie et au Sénégal : Parfois, Celio, Zippy, Beauty Success, Women’Secret.",
   keywords: [
     "MCT",
+    "MCT Holding",
     "Mekadmini Cherif Trading",
+    "mct-holding",
     "franchises Mauritanie",
     "retail Nouakchott",
     "Parfois Mauritanie",
@@ -55,7 +57,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: `${site.name} — ${site.fullName}`,
+    title: `${site.name} — ${site.legalName}`,
     description:
       "Commerce de détail et franchises internationales à Nouakchott et dans la région.",
     url: siteUrl,
@@ -65,7 +67,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} — ${site.fullName}`,
+    title: `${site.name} — ${site.legalName}`,
     description:
       "Distributeur de franchises internationales en Mauritanie et au Sénégal : mode, beauté et retail premium.",
   },

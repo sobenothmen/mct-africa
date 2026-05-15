@@ -7,7 +7,7 @@ export function SiteFooter() {
         <div className="flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
           <div>
             <p className="text-lg font-semibold text-white">{site.name}</p>
-            <p className="mt-1 max-w-sm text-sm text-zinc-400">{site.fullName}</p>
+            <p className="mt-1 max-w-sm text-sm text-zinc-400">{site.legalName}</p>
           </div>
           <div className="text-sm">
             <p className="font-medium text-white">Coordonnées</p>
@@ -22,7 +22,7 @@ export function SiteFooter() {
           </div>
         </div>
         <p className="mt-10 text-center text-xs text-zinc-500">
-          © {new Date().getFullYear()} {site.fullName}. Tous droits réservés.
+          © {new Date().getFullYear()} {site.name}. Tous droits réservés.
         </p>
       </div>
     </footer>

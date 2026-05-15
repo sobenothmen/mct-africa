@@ -35,7 +35,7 @@ export default function OpenGraphImage() {
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 16, maxWidth: 900 }}>
           <div style={{ fontSize: 34, letterSpacing: "0.18em", opacity: 0.8, textTransform: "uppercase" }}>
-            {site.headerLegalLine}
+            {site.legalName}
           </div>
           <div style={{ fontSize: 42, fontWeight: 600, lineHeight: 1.2 }}>
             Franchises internationales, retail premium et développement de marques en Mauritanie et au Sénégal

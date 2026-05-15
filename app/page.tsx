@@ -15,9 +15,10 @@ import { absoluteUrl } from "@/lib/seo";
 export default function Home() {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    name: site.fullName,
-    alternateName: site.name,
+    "@type": "Corporation",
+    name: site.name,
+    alternateName: site.shortName,
+    legalName: site.legalName,
     url: absoluteUrl("/"),
     logo: absoluteUrl("/icon"),
     description:
@@ -85,8 +86,8 @@ export default function Home() {
             </span>
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-zinc-300">
-            {site.fullName} — développement d’enseignes premium, qualité produit et expérience client à la hauteur
-            des marques que nous représentons.
+            {site.name}, groupe {site.legalName} — développement d’enseignes premium, qualité produit et
+            expérience client à la hauteur des marques que nous représentons.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <a
