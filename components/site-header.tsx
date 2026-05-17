@@ -52,14 +52,14 @@ export function SiteHeader({
               {item.label}
             </a>
           ))}
-          <div className="group relative">
+          <div className="group relative pb-3 -mb-3">
             <button
               type="button"
               className="border-b border-transparent px-1 py-2 text-sm font-medium text-white/72 transition group-hover:border-[#c9a15d] group-hover:text-white"
             >
               {brandsLabel}
             </button>
-            <div className="pointer-events-none absolute left-0 top-full z-20 min-w-[14rem] translate-y-3 border border-white/8 bg-[#081527]/98 p-3 opacity-0 shadow-[0_18px_60px_rgba(0,0,0,0.28)] transition duration-200 group-hover:pointer-events-auto group-hover:translate-y-1 group-hover:opacity-100">
+            <div className="pointer-events-none absolute left-0 top-full z-20 min-w-[14rem] translate-y-0 border border-white/8 bg-[#081527]/98 p-3 opacity-0 shadow-[0_18px_60px_rgba(0,0,0,0.28)] transition duration-200 group-hover:pointer-events-auto group-hover:opacity-100">
               <div className="flex flex-col gap-1">
                 {brands.map((brand) => (
                   <Link

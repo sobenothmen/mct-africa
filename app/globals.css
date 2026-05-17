@@ -179,6 +179,17 @@ body {
   }
 }
 
+@keyframes brandFade {
+  from {
+    opacity: 0.25;
+    transform: scale(1.01);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 .hero-fade-up {
   animation: hero-fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
 }

@@ -4,28 +4,48 @@ type SiteFooterProps = Pick<LocalizedContent, "contact" | "footer">;
 
 export function SiteFooter({ contact, footer }: SiteFooterProps) {
   return (
-    <footer className="border-t border-[var(--border-subtle)] bg-white text-[#4d5a6b]">
+    <footer className="border-t border-[var(--border-subtle)] bg-[linear-gradient(180deg,#ffffff_0%,#f7faff_100%)] text-[#4d5a6b]">
       <div className="w-full px-4 py-14 sm:px-6 lg:px-8">
-        <div className="flex flex-col gap-8 border-t border-[#c9a15d]/40 pt-8 sm:flex-row sm:items-start sm:justify-between">
-          <div>
-            <p className="text-lg font-semibold text-[#10233a]">{site.name}</p>
-            <p className="mt-1 max-w-sm text-sm text-[#c9a15d]">{site.legalName}</p>
-          </div>
-          <div className="text-sm">
-            <p className="font-medium text-[#10233a]">{footer.contactHeading}</p>
-            <p className="mt-2 text-[#5b6979]">{contact.addressLines.join(", ")}</p>
-            <div className="mt-2 flex flex-col gap-1">
-              {contact.phones.map((p) => (
-                <a key={p} href={`tel:${p.replace(/\s/g, "")}`} className="transition hover:text-[#c9a15d]">
-                  {p}
-                </a>
-              ))}
+        <div className="mx-auto max-w-[88rem]">
+          <div className="grid gap-10 border-t border-[#c9a15d]/35 pt-10 sm:grid-cols-2 lg:grid-cols-[1.1fr_0.9fr]">
+            <div>
+              <p className="text-xl font-semibold tracking-tight text-[#10233a]">{site.name}</p>
+              <p className="mt-2 max-w-md text-sm leading-7 text-[#5b6979]">{site.legalName}</p>
+              <div className="mt-6 h-px w-24 bg-[#c9a15d]/55" aria-hidden />
+            </div>
+
+            <div className="text-sm">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#10233a]">
+                {footer.contactHeading}
+              </p>
+              <p className="mt-3 text-[#5b6979]">{contact.addressLines.join(", ")}</p>
+              <div className="mt-4 flex flex-col gap-2">
+                {contact.phones.map((p) => (
+                  <a
+                    key={p}
+                    href={`tel:${p.replace(/\s/g, "")}`}
+                    className="font-medium text-[#10233a] transition hover:text-[#c9a15d]"
+                  >
+                    {p}
+                  </a>
+                ))}
+                {contact.emails.map((email) => (
+                  <a
+                    key={email}
+                    href={`mailto:${email}`}
+                    className="font-medium text-[#10233a] transition hover:text-[#c9a15d]"
+                  >
+                    {email}
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
+
+          <p className="mt-10 text-center text-xs text-[#7d8896]">
+            © {new Date().getFullYear()} {site.name}. {footer.rights}
+          </p>
         </div>
-        <p className="mt-8 text-center text-xs text-[#7d8896]">
-          © {new Date().getFullYear()} {site.name}. {footer.rights}
-        </p>
       </div>
     </footer>
   );

@@ -2,6 +2,7 @@
 
 import { SiteImage } from "@/components/site-image";
 import { type LocalizedContent, type Locale } from "@/lib/content";
+import { useEffect, useMemo, useState } from "react";
 
 type HeroBannerProps = Pick<LocalizedContent, "heroHighlights" | "hero" | "brands"> & {
   locale: Locale;
@@ -9,6 +10,8 @@ type HeroBannerProps = Pick<LocalizedContent, "heroHighlights" | "hero" | "brand
 
 export function HeroBanner({ heroHighlights, hero, brands, locale }: HeroBannerProps) {
   const isArabic = locale === "ar";
+  const highlightCols = heroHighlights.length >= 5 ? "lg:grid-cols-5" : "lg:grid-cols-4";
+  const facades = useMemo(() => getBrandFacades(brands), [brands]);
 
   return (
     <section
@@ -40,7 +43,7 @@ export function HeroBanner({ heroHighlights, hero, brands, locale }: HeroBannerP
               </p>
             </div>
 
-            <div className="mt-9 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div className={`mt-9 grid gap-6 sm:grid-cols-2 ${highlightCols}`}>
               {heroHighlights.map((stat) => (
                 <div key={stat.label} className="space-y-4">
                   <MetricIcon label={stat.label} />
@@ -72,28 +75,15 @@ export function HeroBanner({ heroHighlights, hero, brands, locale }: HeroBannerP
                 {hero.contactUs}
               </a>
             </div>
+
+            <div className="mt-10 xl:hidden" dir="ltr">
+              <BrandFacadeMarquee facades={facades} />
+            </div>
           </div>
 
           <div className="hidden xl:block xl:pl-12">
             <div className="flex h-full min-h-[29rem] flex-col justify-between overflow-hidden bg-[#0f1f34] px-0 py-0 text-white">
-              <div className="group relative min-h-[17rem] w-full">
-                <SiteImage
-                  src="/images/mct-team-office.png"
-                  alt="Employés MCT en réunion de travail dans un bureau"
-                  fill
-                  className="object-cover object-[center_20%] transition duration-700 group-hover:scale-[1.03]"
-                  sizes="(max-width: 1280px) 100vw, 34rem"
-                />
-                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(8,19,33,0.04)_0%,rgba(8,19,33,0.08)_38%,rgba(8,19,33,0.74)_100%)]" />
-                <div className="absolute inset-x-0 bottom-0 p-6">
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#d7b57a]">
-                    Équipe MCT
-                  </p>
-                  <p className="mt-2 max-w-sm text-[1.05rem] font-semibold leading-tight text-white">
-                    MCT au quotidien, entre coordination, analyse et développement des enseignes
-                  </p>
-                </div>
-              </div>
+              <BrandFacadeShowcase facades={facades} />
               <div className="px-10 pb-8 pt-7">
                 <div className="flex items-center gap-4">
                   <p className="shrink-0 text-[0.78rem] font-bold uppercase tracking-[0.12em] text-white">
@@ -108,6 +98,103 @@ export function HeroBanner({ heroHighlights, hero, brands, locale }: HeroBannerP
         </div>
       </div>
     </section>
+  );
+}
+
+function getBrandFacades(brands: HeroBannerProps["brands"]) {
+  return brands.map((brand) => {
+    const src =
+      brand.slug === "celio"
+        ? "/images/brands/celio/facade.jpeg"
+        : brand.slug === "zippy"
+          ? "/images/brands/zippy/facade.jpeg"
+          : brand.slug === "beauty-success"
+            ? "/images/brands/beauty-success/facade-day.jpeg"
+            : brand.slug === "parfois"
+              ? "/images/brands/parfois/feature.jpeg"
+              : brand.image;
+
+    const alt = `Façade ${brand.name}`;
+    return { slug: brand.slug, name: brand.name, src, alt };
+  });
+}
+
+function BrandFacadeShowcase({
+  facades,
+}: {
+  facades: ReadonlyArray<{ slug: string; name: string; src: string; alt: string }>;
+}) {
+  const [active, setActive] = useState(0);
+
+  useEffect(() => {
+    if (facades.length <= 1) return;
+    const id = window.setInterval(() => {
+      setActive((prev) => (prev + 1) % facades.length);
+    }, 3800);
+    return () => window.clearInterval(id);
+  }, [facades.length]);
+
+  const current = facades[active] ?? facades[0];
+  if (!current) return null;
+
+  return (
+    <div className="relative min-h-[17rem] w-full">
+      <div className="group relative min-h-[17rem] w-full overflow-hidden">
+        <SiteImage
+          key={current.src}
+          src={current.src}
+          alt={current.alt}
+          fill
+          className="object-cover object-[center_20%] transition duration-700 group-hover:scale-[1.03] animate-[brandFade_520ms_ease-out]"
+          sizes="(max-width: 1280px) 100vw, 34rem"
+          priority
+        />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(8,19,33,0.04)_0%,rgba(8,19,33,0.08)_38%,rgba(8,19,33,0.78)_100%)]" />
+        <div className="absolute inset-x-0 bottom-0 p-6">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#d7b57a]">
+            {current.name}
+          </p>
+          <p className="mt-2 max-w-sm text-[1.05rem] font-semibold leading-tight text-white">
+            {current.alt}
+          </p>
+        </div>
+      </div>
+
+      {facades.length > 1 ? (
+        <BrandFacadeMarquee facades={facades} activeSlug={current.slug} />
+      ) : null}
+    </div>
+  );
+}
+
+function BrandFacadeMarquee({
+  facades,
+  activeSlug,
+}: {
+  facades: ReadonlyArray<{ slug: string; name: string; src: string; alt: string }>;
+  activeSlug?: string;
+}) {
+  if (facades.length <= 1) return null;
+
+  return (
+    <div className="hero-marquee-border border-t border-white/10">
+      <div className="hero-marquee-viewport">
+        <div className="hero-marquee-track py-3">
+          {[...facades, ...facades].map((item, idx) => (
+            <div key={`${item.slug}-${idx}`} className="mx-3 flex items-center">
+              <div
+                className={`relative h-12 w-18 overflow-hidden border border-white/10 bg-white/5 ${
+                  activeSlug && item.slug === activeSlug ? "outline outline-2 outline-[#d7b57a]" : ""
+                }`}
+                title={item.name}
+              >
+                <SiteImage src={item.src} alt={item.alt} fill className="object-cover" sizes="72px" />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
   );
 }
 
