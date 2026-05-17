@@ -193,15 +193,14 @@ export default async function BrandPage({
                     sizes="224px"
                   />
                 </div>
-                <h1 className="mt-8 font-serif text-[2.85rem] leading-[0.98] tracking-[-0.04em] text-white sm:text-[3.5rem] lg:text-[4rem]">
-                  {brand.name}
-                </h1>
-                <p className="mt-6 text-base leading-8 text-white/78 sm:text-lg">{brand.body[0]}</p>
-                <div className="mt-9 flex flex-wrap gap-4">
-                  <a
-                    href="#boutique"
-                    className="inline-flex min-w-[15rem] items-center justify-center bg-[#c9a15d] px-6 py-3 text-sm font-semibold uppercase tracking-[0.08em] text-[#081527] transition hover:bg-[#d7b57a]"
-                  >
+              <h1 className="mt-8 font-serif text-[2.85rem] leading-[0.98] tracking-[-0.04em] text-white sm:text-[3.5rem] lg:text-[4rem]">
+                {brand.name}
+              </h1>
+              <div className="mt-9 flex flex-wrap gap-4">
+                <a
+                  href="#boutique"
+                  className="inline-flex min-w-[15rem] items-center justify-center bg-[#c9a15d] px-6 py-3 text-sm font-semibold uppercase tracking-[0.08em] text-[#081527] transition hover:bg-[#d7b57a]"
+                >
                     {cta.primary}
                   </a>
                   <a
