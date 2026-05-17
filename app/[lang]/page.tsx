@@ -95,7 +95,7 @@ export default async function LocalizedHomePage({
                 <div>
                   <div className="relative aspect-[4/5] overflow-hidden bg-white shadow-xl">
                     <SiteImage
-                      src="/images/trajectory-croissance-v2.png"
+                      src="/images/trajectory-croissance-v3.png"
                       alt="Une trajectoire de croissance de MCT (2017–2026) avec présence par pays"
                       fill
                       className="object-contain p-3 sm:p-4"
@@ -208,41 +208,6 @@ export default async function LocalizedHomePage({
                       />
                     </div>
                   </Link>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="equipe" className="scroll-mt-20 bg-white">
-          <div className="w-full px-4 py-18 sm:px-6 lg:px-8">
-            <div className="bg-[#10233a] px-6 py-10 text-white shadow-[0_24px_90px_rgba(8,21,39,0.18)] sm:px-8 lg:px-10">
-              <h2 className="text-sm font-semibold uppercase tracking-[0.22em] text-[#d7b57a]">
-                {content.home.teamEyebrow}
-              </h2>
-              <p className="mt-4 max-w-2xl text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-                {content.home.teamTitle}
-              </p>
-              <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-                {content.team.map((member) => (
-                  <div
-                    key={member.name}
-                    className="group overflow-hidden border-t border-white/10 bg-white/6 shadow-md transition hover:bg-white/8 hover:shadow-lg"
-                  >
-                    <div className="relative aspect-[3/4] bg-[#0b182a]">
-                      <SiteImage
-                        src={member.image}
-                        alt={member.name}
-                        fill
-                        className="object-cover object-[center_18%] transition duration-300 group-hover:scale-[1.02]"
-                        sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 320px"
-                      />
-                    </div>
-                    <div className="p-5">
-                      <p className="font-semibold text-white">{member.name}</p>
-                      <p className="mt-1 text-sm text-[#d7b57a]">{member.role}</p>
-                    </div>
-                  </div>
                 ))}
               </div>
             </div>

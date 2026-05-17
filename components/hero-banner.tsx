@@ -175,14 +175,6 @@ function BrandWordmark({
     );
   }
 
-  if (slug === "women-secret") {
-    return (
-      <span className="text-[0.98rem] font-medium tracking-[0.01em] text-white">
-        Women’Secret
-      </span>
-    );
-  }
-
   return <span className="text-sm font-semibold uppercase tracking-[0.14em] text-white">{name}</span>;
 }
 

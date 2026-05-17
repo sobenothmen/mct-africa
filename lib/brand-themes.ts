@@ -54,16 +54,6 @@ export const BRAND_THEMES: Record<
     title: "border-l-4 border-violet-600 pl-4 text-violet-950",
     accentDot: "bg-violet-600",
   },
-  "women-secret": {
-    strip: "bg-gradient-to-r from-rose-900 via-rose-600 to-pink-400",
-    article: "shadow-lg shadow-rose-900/15 ring-1 ring-rose-200/80",
-    inner: "bg-gradient-to-br from-rose-50/90 via-white to-pink-50/60",
-    imageWrap: "ring-2 ring-rose-300/80 shadow-xl shadow-rose-600/15",
-    badge:
-      "border border-white/25 bg-gradient-to-br from-rose-800 to-rose-950 font-semibold text-rose-50 shadow-md",
-    title: "border-l-4 border-rose-600 pl-4 text-rose-950",
-    accentDot: "bg-rose-500",
-  },
 };
 
 export function getBrandTheme(slug: string) {

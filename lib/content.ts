@@ -51,14 +51,6 @@ const brandCatalog = [
     logo: "/images/logos/beauty-success.png",
     countries: ["MR"] as const,
   },
-  {
-    slug: "women-secret",
-    name: "Women’Secret",
-    year: "2026",
-    image: "/images/women-secret.jpg",
-    logo: "/images/logos/women-secret.jpg",
-    countries: ["MR"] as const,
-  },
 ] as const;
 
 export type BrandSlug = (typeof brandCatalog)[number]["slug"];
@@ -211,14 +203,13 @@ const localizedContent = {
       { href: "#qui-sommes-nous", label: "Qui sommes-nous" },
       { href: "#vision", label: "Vision & mission" },
       { href: "#enseignes", label: "Partenaires retail" },
-      { href: "#equipe", label: "Équipe" },
       { href: "/contact", label: "Contact" },
     ],
     heroHighlights: [
       { value: "2", suffix: "", label: "PAYS", detail: "Mauritanie, Sénégal" },
       { value: "32", suffix: "+", label: "ANNÉES", detail: "De présence" },
       { value: "50", suffix: "+", label: "COLLABORATEURS", detail: "Passionnés" },
-      { value: "5", suffix: "", label: "MARQUES", detail: "Internationales" },
+      { value: "4", suffix: "", label: "MARQUES", detail: "Internationales" },
     ],
     hero: {
       badge: "Partenaires retail · Mauritanie & Sénégal",
@@ -245,7 +236,7 @@ const localizedContent = {
     home: {
       introParagraphs: [
         "M.C.T est une société fondée en 2017 en Mauritanie par deux associés, chacun avec sa propre expertise. Nous avons débuté en ouvrant une parfumerie de luxe, **Parfumerie Fashion**, où l’on trouve les grandes marques. La même année, nous avons acquis la franchise **Parfois**, suivie de **Celio** en 2019.",
-        "En 2021, nous avons lancé **Zippy**, spécialisée dans les produits destinés aux nourrissons, bébés et enfants de 0 à 14 ans.. En 2023, nous avons inauguré le premier institut de beauté en Mauritanie avec la franchise **Beauty Success** (parfumerie & institut). Nous avons signé avec le groupe espagnol **Tendam** pour l’enseigne **Women’Secret** (2026). Nous sommes également au **Sénégal** avec **Parfois**.",
+        "En 2021, nous avons lancé **Zippy**, spécialisée dans les produits destinés aux nourrissons, bébés et enfants de 0 à 14 ans. En 2023, nous avons inauguré le premier institut de beauté en Mauritanie avec la franchise **Beauty Success** (parfumerie & institut). Nous sommes également au **Sénégal** avec **Parfois**.",
         "Avec une équipe d’environ 50 collaborateurs, nous poursuivons notre croissance en tant que pionniers dans l’acquisition de franchises internationales et développons continuellement notre gamme de choix.",
       ],
       historyEyebrow: "Notre histoire",
@@ -298,7 +289,7 @@ const localizedContent = {
     seo: {
       title: "MCT Holding — Mekadmini Cherif Trading",
       description:
-        "MCT Holding, groupe Mekadmini Cherif Trading — distributeur de franchises internationales en Mauritanie et au Sénégal : Parfois, Celio, Zippy, Beauty Success, Women’Secret.",
+        "MCT Holding, groupe Mekadmini Cherif Trading — distributeur de franchises internationales en Mauritanie et au Sénégal : Parfois, Celio, Zippy, Beauty Success.",
       keywords: [
         "MCT",
         "MCT Holding",
@@ -309,7 +300,6 @@ const localizedContent = {
         "Celio Mauritanie",
         "Zippy Mauritanie",
         "Beauty Success Mauritanie",
-        "Women’Secret Mauritanie",
       ],
       ogDescription: "Commerce de détail et franchises internationales à Nouakchott et dans la région.",
       twitterDescription:
@@ -359,13 +349,6 @@ const localizedContent = {
           "L’objectif est de faire de Beauty Success une référence incontournable du secteur de la beauté en Mauritanie, à travers des produits et des services répondant aux plus hauts standards de qualité.",
         ],
       },
-      "women-secret": {
-        imageAlt: "Women’Secret — lingerie et mode féminine",
-        body: [
-          "M.C.T a signé un partenariat avec le groupe espagnol Tendam pour le développement de l’enseigne Women’Secret en Mauritanie, avec l’ouverture du premier magasin à Nouakchott.",
-          "Cette collaboration vise à introduire un concept international reconnu dans l’univers féminin et à positionner Women’Secret comme une enseigne de référence à Nouakchott, grâce à une offre moderne, innovante et adaptée aux attentes du marché local.",
-        ],
-      },
     },
   },
   en: {
@@ -374,14 +357,13 @@ const localizedContent = {
       { href: "#qui-sommes-nous", label: "About us" },
       { href: "#vision", label: "Vision & mission" },
       { href: "#enseignes", label: "Retail partners" },
-      { href: "#equipe", label: "Team" },
       { href: "/contact", label: "Contact" },
     ],
     heroHighlights: [
       { value: "2", suffix: "", label: "COUNTRIES", detail: "Mauritania, Senegal" },
       { value: "32", suffix: "+", label: "YEARS", detail: "Of presence" },
       { value: "50", suffix: "+", label: "COLLABORATORS", detail: "Committed" },
-      { value: "5", suffix: "", label: "BRANDS", detail: "International" },
+      { value: "4", suffix: "", label: "BRANDS", detail: "International" },
     ],
     hero: {
       badge: "Retail partners · Mauritania & Senegal",
@@ -408,7 +390,7 @@ const localizedContent = {
     home: {
       introParagraphs: [
         "M.C.T is a limited liability company founded in Mauritania in 2017 by two partners, each bringing distinct expertise. We began by opening a luxury perfume store, **Parfumerie Fashion**, offering leading international brands. In the same year, we secured the **Parfois** franchise, followed by **Celio** in 2019.",
-        "In 2021, we launched **Zippy**, specializing in products for babies and infants. In 2023, we opened Mauritania’s first beauty institute through the **Beauty Success** franchise (perfumery & institute). We also signed with the Spanish Tendam group for **Women’Secret** (2026). We are also present in **Senegal** with **Parfois**.",
+        "In 2021, we launched **Zippy**, specializing in products for babies and infants. In 2023, we opened Mauritania’s first beauty institute through the **Beauty Success** franchise (perfumery & institute). We are also present in **Senegal** with **Parfois**.",
         "With a team of around 50 employees, we continue to grow as pioneers in acquiring international franchises and steadily expanding our portfolio.",
       ],
       historyEyebrow: "Our story",
@@ -461,7 +443,7 @@ const localizedContent = {
     seo: {
       title: "MCT Holding — Mekadmini Cherif Trading",
       description:
-        "MCT Holding, the Mekadmini Cherif Trading group — distributor of international franchises in Mauritania and Senegal: Parfois, Celio, Zippy, Beauty Success, Women’Secret.",
+        "MCT Holding, the Mekadmini Cherif Trading group — distributor of international franchises in Mauritania and Senegal: Parfois, Celio, Zippy, Beauty Success.",
       keywords: [
         "MCT",
         "MCT Holding",
@@ -472,7 +454,6 @@ const localizedContent = {
         "Celio Mauritania",
         "Zippy Mauritania",
         "Beauty Success Mauritania",
-        "Women’Secret Mauritania",
       ],
       ogDescription: "Retail and international franchises in Nouakchott and across the region.",
       twitterDescription:
@@ -522,13 +503,6 @@ const localizedContent = {
           "The objective is to establish Beauty Success as a leading benchmark in Mauritania’s beauty sector through products and services that meet the highest quality standards.",
         ],
       },
-      "women-secret": {
-        imageAlt: "Women’Secret lingerie and womenswear",
-        body: [
-          "M.C.T signed a partnership with the Spanish Tendam group to develop Women’Secret in Mauritania, with the opening of the first store in Nouakchott.",
-          "This partnership aims to introduce a recognized international concept in the women’s segment and position Women’Secret as a benchmark brand in Nouakchott through a modern, innovative offer tailored to the local market.",
-        ],
-      },
     },
   },
   ar: {
@@ -537,14 +511,13 @@ const localizedContent = {
       { href: "#qui-sommes-nous", label: "من نحن" },
       { href: "#vision", label: "الرؤية والرسالة" },
       { href: "#enseignes", label: "شركاء التجزئة" },
-      { href: "#equipe", label: "الفريق" },
       { href: "/contact", label: "اتصل بنا" },
     ],
     heroHighlights: [
       { value: "2", suffix: "", label: "بلدان", detail: "موريتانيا، السنغال" },
       { value: "32", suffix: "+", label: "سنوات", detail: "من الحضور" },
       { value: "50", suffix: "+", label: "متعاونون", detail: "شغوفون" },
-      { value: "5", suffix: "", label: "علامات", detail: "دولية" },
+      { value: "4", suffix: "", label: "علامات", detail: "دولية" },
     ],
     hero: {
       badge: "شركاء التجزئة · موريتانيا والسنغال",
@@ -571,7 +544,7 @@ const localizedContent = {
     home: {
       introParagraphs: [
         "M.C.T هي شركة ذات مسؤولية محدودة تأسست في موريتانيا سنة 2017 على يد شريكين يتمتع كل واحد منهما بخبرة خاصة. بدأنا بافتتاح متجر عطور فاخر **Parfumerie Fashion** يضم كبرى العلامات العالمية. وفي السنة نفسها حصلنا على امتياز **Parfois** ثم **Celio** سنة 2019.",
-        "وفي سنة 2021 أطلقنا **Zippy** المتخصصة في منتجات الرضع والأطفال. وفي سنة 2023 افتتحنا أول معهد تجميل في موريتانيا عبر امتياز **Beauty Success** (عطور ومعهد). كما وقعنا مع مجموعة Tendam الإسبانية لتطوير **Women’Secret** سنة 2026. ونحن حاضرون أيضًا في **السنغال** عبر **Parfois**.",
+        "وفي سنة 2021 أطلقنا **Zippy** المتخصصة في منتجات الرضع والأطفال. وفي سنة 2023 افتتحنا أول معهد تجميل في موريتانيا عبر امتياز **Beauty Success** (عطور ومعهد). ونحن حاضرون أيضًا في **السنغال** عبر **Parfois**.",
         "وبفريق يضم نحو 50 موظفًا، نواصل نمونا بصفتنا من الرواد في استقطاب الامتيازات الدولية، ونوسع باستمرار محفظة العلامات التي نمثلها.",
       ],
       historyEyebrow: "قصتنا",
@@ -624,7 +597,7 @@ const localizedContent = {
     seo: {
       title: "MCT Holding — Mekadmini Cherif Trading",
       description:
-        "MCT Holding، مجموعة Mekadmini Cherif Trading — موزع لامتيازات دولية في موريتانيا والسنغال: Parfois وCelio وZippy وBeauty Success وWomen’Secret.",
+        "MCT Holding، مجموعة Mekadmini Cherif Trading — موزع لامتيازات دولية في موريتانيا والسنغال: Parfois وCelio وZippy وBeauty Success.",
       keywords: [
         "MCT",
         "MCT Holding",
@@ -635,7 +608,6 @@ const localizedContent = {
         "Celio موريتانيا",
         "Zippy موريتانيا",
         "Beauty Success موريتانيا",
-        "Women’Secret موريتانيا",
       ],
       ogDescription: "التجزئة والامتيازات الدولية في نواكشوط وعلى مستوى المنطقة.",
       twitterDescription:
@@ -683,13 +655,6 @@ const localizedContent = {
           "في مارس 2023 أطلقت M.C.T علامة Beauty Success، لتصبح أول فاعل في السوق الموريتاني يقدم مفهومًا يجمع بين العطور ومستحضرات التجميل ومعهد التجميل ضمن امتياز دولي معروف.",
           "وتوفر العلامة تشكيلة حصرية من العطور ومنتجات الجمال والمكياج والعناية والإكسسوارات، إضافة إلى معهد متخصص يقدم خدمات احترافية.",
           "ويتمثل الهدف في جعل Beauty Success مرجعًا أساسيًا في قطاع الجمال في موريتانيا من خلال منتجات وخدمات تستجيب لأعلى معايير الجودة.",
-        ],
-      },
-      "women-secret": {
-        imageAlt: "Women’Secret للملابس النسائية واللانجري",
-        body: [
-          "وقعت M.C.T شراكة مع مجموعة Tendam الإسبانية لتطوير Women’Secret في موريتانيا، مع افتتاح أول متجر في نواكشوط.",
-          "وتهدف هذه الشراكة إلى إدخال مفهوم دولي معروف في عالم المرأة وترسيخ Women’Secret كعلامة مرجعية في نواكشوط عبر عرض عصري ومبتكر ومكيف مع متطلبات السوق المحلية.",
         ],
       },
     },
