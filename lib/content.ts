@@ -185,8 +185,8 @@ function getCountryName(locale: Locale, code: CountryCode) {
 
 const sharedContact = {
   addressLines: ["Avenue Moktar Ould Daddah", "Nouakchott, Mauritanie"],
-  phones: ["+222 36 33 69 19", "+222 36 14 46 14"],
-  emails: ["contact@mct-holding.com", "cherif.med.lotfi@hotmail.com", "mouna.ghedamsi@gmail.com"],
+  phones: ["+222 36 33 69 19"],
+  emails: ["contact@mct-holding.com"],
 } as const;
 
 const sharedTeam = [

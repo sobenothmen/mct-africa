@@ -95,7 +95,7 @@ export default async function LocalizedHomePage({
                 <div>
                   <div className="relative aspect-[4/5] overflow-hidden bg-white shadow-xl">
                     <SiteImage
-                      src="/images/trajectory-croissance-v3.png"
+                      src="/images/trajectory-croissance-v5.png"
                       alt="Une trajectoire de croissance de MCT (2017–2026) avec présence par pays"
                       fill
                       className="object-contain p-3 sm:p-4"
