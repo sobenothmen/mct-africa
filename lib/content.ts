@@ -244,8 +244,8 @@ const localizedContent = {
     },
     home: {
       introParagraphs: [
-        "M.C.T est une société SARL fondée en 2017 en Mauritanie par deux associés, chacun avec sa propre expertise. Nous avons débuté en ouvrant une parfumerie de luxe, **Parfumerie Fashion**, où l’on trouve les grandes marques. La même année, nous avons acquis la franchise **Parfois**, suivie de **Celio** en 2019.",
-        "En 2021, nous avons lancé **Zippy**, spécialisée dans les produits pour bébés et nourrissons. En 2023, nous avons inauguré le premier institut de beauté en Mauritanie avec la franchise **Beauty Success** (parfumerie & institut). Nous avons signé avec le groupe espagnol **Tendam** pour l’enseigne **Women’Secret** (2026). Nous sommes également au **Sénégal** avec **Parfois**.",
+        "M.C.T est une société fondée en 2017 en Mauritanie par deux associés, chacun avec sa propre expertise. Nous avons débuté en ouvrant une parfumerie de luxe, **Parfumerie Fashion**, où l’on trouve les grandes marques. La même année, nous avons acquis la franchise **Parfois**, suivie de **Celio** en 2019.",
+        "En 2021, nous avons lancé **Zippy**, spécialisée dans les produits destinés aux nourrissons, bébés et enfants de 0 à 14 ans.. En 2023, nous avons inauguré le premier institut de beauté en Mauritanie avec la franchise **Beauty Success** (parfumerie & institut). Nous avons signé avec le groupe espagnol **Tendam** pour l’enseigne **Women’Secret** (2026). Nous sommes également au **Sénégal** avec **Parfois**.",
         "Avec une équipe d’environ 50 collaborateurs, nous poursuivons notre croissance en tant que pionniers dans l’acquisition de franchises internationales et développons continuellement notre gamme de choix.",
       ],
       historyEyebrow: "Notre histoire",
