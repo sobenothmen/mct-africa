@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { ContactForm } from "@/components/contact-form";
 import { SiteImage } from "@/components/site-image";
 import { getLocalizedContent, hasLocale, type Locale } from "@/lib/content";
 
@@ -95,7 +96,10 @@ export default async function ContactPage({
             <h2 className="text-sm font-semibold uppercase tracking-[0.22em] text-[#b68d49]">
               {content.footer.contactHeading}
             </h2>
-            <dl className="mt-8 space-y-8">
+            <div className="mt-8">
+              <ContactForm locale={lang as Locale} />
+            </div>
+            <dl className="mt-10 space-y-8">
               <div>
                 <dt className="text-xs font-semibold uppercase tracking-wider text-zinc-500">
                   {content.home.addressLabel}
@@ -176,4 +180,3 @@ export default async function ContactPage({
     </main>
   );
 }
-

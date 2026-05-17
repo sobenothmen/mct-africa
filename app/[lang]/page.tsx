@@ -279,7 +279,7 @@ export default async function LocalizedHomePage({
               </div>
               <div className="relative min-h-[320px] overflow-hidden shadow-[0_20px_80px_rgba(16,35,58,0.18)] lg:min-h-0">
                 <SiteImage
-                  src="/images/contact.jpeg"
+                  src="/images/contact-home.png"
                   alt="MCT contact"
                   fill
                   className="object-cover"
