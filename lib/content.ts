@@ -208,7 +208,7 @@ const localizedContent = {
     heroHighlights: [
       { value: "2", suffix: "", label: "PAYS", detail: "Mauritanie, Sénégal" },
       { value: "32", suffix: "+", label: "ANNÉES", detail: "De présence" },
-      { value: "50", suffix: "+", label: "COLLABORATEURS", detail: "Passionnés" },
+      { value: "10", suffix: "", label: "MAGASINS", detail: "En activité" },
       { value: "4", suffix: "", label: "MARQUES", detail: "Internationales" },
     ],
     hero: {
@@ -362,7 +362,7 @@ const localizedContent = {
     heroHighlights: [
       { value: "2", suffix: "", label: "COUNTRIES", detail: "Mauritania, Senegal" },
       { value: "32", suffix: "+", label: "YEARS", detail: "Of presence" },
-      { value: "50", suffix: "+", label: "COLLABORATORS", detail: "Committed" },
+      { value: "10", suffix: "", label: "STORES", detail: "Operating" },
       { value: "4", suffix: "", label: "BRANDS", detail: "International" },
     ],
     hero: {
@@ -516,7 +516,7 @@ const localizedContent = {
     heroHighlights: [
       { value: "2", suffix: "", label: "بلدان", detail: "موريتانيا، السنغال" },
       { value: "32", suffix: "+", label: "سنوات", detail: "من الحضور" },
-      { value: "50", suffix: "+", label: "متعاونون", detail: "شغوفون" },
+      { value: "10", suffix: "", label: "متاجر", detail: "قيد التشغيل" },
       { value: "4", suffix: "", label: "علامات", detail: "دولية" },
     ],
     hero: {
