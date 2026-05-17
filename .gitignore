@@ -18,3 +18,5 @@ pnpm-debug.log*
 
 *.tsbuildinfo
 .DS_Store
+
+public/images/.originals/
