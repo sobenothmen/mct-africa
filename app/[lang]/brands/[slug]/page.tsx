@@ -91,7 +91,6 @@ export default async function BrandPage({
   }
 
   const theme = getBrandTheme(brand.slug);
-  const relatedBrands = content.brands.filter((item) => item.slug !== brand.slug);
   const servedCountries = brand.countries
     .map((code) => content.heroCountries.find((country) => country.code === code)?.name)
     .filter(Boolean)
@@ -108,6 +107,17 @@ export default async function BrandPage({
                 <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#d7b57a]">
                   {content.home.brandPartnerLabel}
                 </p>
+                <div className="mt-6 flex items-center gap-4">
+                  <div className="relative h-10 w-44 bg-white/90 p-2">
+                    <SiteImage
+                      src={brand.logo}
+                      alt={`${brand.name} logo`}
+                      fill
+                      className="object-contain"
+                      sizes="176px"
+                    />
+                  </div>
+                </div>
                 <h1 className="mt-5 font-serif text-[3rem] leading-[0.95] tracking-[-0.04em] text-white sm:text-[4rem] lg:text-[5rem]">
                   {brand.name}
                 </h1>
@@ -174,6 +184,20 @@ export default async function BrandPage({
           <div className={`overflow-hidden ${theme.article}`}>
             <div className={`h-1.5 w-full ${theme.strip}`} aria-hidden />
             <div className={`grid gap-8 p-6 sm:p-8 ${theme.inner}`}>
+              <div className="flex items-center justify-between gap-6">
+                <div className="relative h-9 w-40 bg-white p-2 shadow-sm">
+                  <SiteImage
+                    src={brand.logo}
+                    alt={`${brand.name} logo`}
+                    fill
+                    className="object-contain"
+                    sizes="160px"
+                  />
+                </div>
+                <div className="text-xs font-semibold uppercase tracking-wider text-zinc-500">
+                  {content.home.brandPartnerLabel}
+                </div>
+              </div>
               <div className={`relative aspect-[16/11] overflow-hidden shadow-lg ${theme.imageWrap}`}>
                 <SiteImage
                   src={brand.image}
@@ -186,57 +210,13 @@ export default async function BrandPage({
               <div>
                 <div className="mb-3 flex items-center gap-2">
                   <span className={`h-2 w-2 shrink-0 rounded-full ${theme.accentDot}`} aria-hidden />
-                  <span className="text-xs font-semibold uppercase tracking-wider text-zinc-500">
-                    {content.home.brandPartnerLabel}
-                  </span>
+                  <span className="text-xs font-semibold uppercase tracking-wider text-zinc-500">{servedCountries}</span>
                 </div>
                 <h2 className={`text-2xl font-bold tracking-tight sm:text-3xl ${theme.title}`}>
                   {brand.name}
                 </h2>
-                <p className="mt-5 leading-8 text-zinc-600">{servedCountries}</p>
+                <p className="mt-5 leading-8 text-zinc-600">{brand.body[0]}</p>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="w-full bg-white px-4 py-16 sm:px-6 lg:px-8">
-        <div className="bg-[#0b182a] px-6 py-8 text-white sm:px-8 lg:px-10">
-          <div className="border-t border-[#c9a15d]/45 pt-8">
-            <div className="flex items-end justify-between gap-6">
-              <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#d7b57a]">
-                  {content.hero.representedBrands}
-                </p>
-                <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-                  {brand.name}
-                </h2>
-              </div>
-            </div>
-            <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-              {relatedBrands.map((item) => (
-                <Link
-                  key={item.slug}
-                  href={`/${lang}/brands/${item.slug}`}
-                  className="group bg-white/5 p-4 transition hover:bg-white/8"
-                >
-                  <div className="relative aspect-[4/3] overflow-hidden">
-                    <SiteImage
-                      src={item.image}
-                      alt={item.imageAlt}
-                      fill
-                      className="object-cover transition duration-300 group-hover:scale-[1.03]"
-                      sizes="(max-width: 768px) 100vw, 25vw"
-                    />
-                  </div>
-                  <div className="mt-4">
-                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#d7b57a]">
-                      {item.year}
-                    </p>
-                    <p className="mt-2 text-xl font-semibold text-white">{item.name}</p>
-                  </div>
-                </Link>
-              ))}
             </div>
           </div>
         </div>

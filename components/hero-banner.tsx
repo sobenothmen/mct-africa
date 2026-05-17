@@ -1,15 +1,20 @@
 "use client";
 
 import { SiteImage } from "@/components/site-image";
-import { type LocalizedContent } from "@/lib/content";
+import { type LocalizedContent, type Locale } from "@/lib/content";
 
-type HeroBannerProps = Pick<LocalizedContent, "heroHighlights" | "hero" | "brands">;
+type HeroBannerProps = Pick<LocalizedContent, "heroHighlights" | "hero" | "brands"> & {
+  locale: Locale;
+};
 
-export function HeroBanner({ heroHighlights, hero, brands }: HeroBannerProps) {
+export function HeroBanner({ heroHighlights, hero, brands, locale }: HeroBannerProps) {
+  const isArabic = locale === "ar";
+
   return (
     <section
       id="accueil"
       className="relative overflow-hidden bg-[var(--background)] text-slate-950"
+      dir={isArabic ? "ltr" : undefined}
     >
       <HeroBackdrop />
       <div className="pointer-events-none absolute inset-y-0 right-0 hidden xl:block xl:w-[40vw] 2xl:w-[44vw]">
@@ -18,7 +23,12 @@ export function HeroBanner({ heroHighlights, hero, brands }: HeroBannerProps) {
 
       <div className="relative w-full px-4 pb-10 pt-20 sm:px-6 lg:px-8 lg:pb-12 lg:pt-22">
         <div className="grid gap-8 xl:grid-cols-[minmax(0,1fr)_34rem] xl:items-stretch xl:gap-0">
-          <div className="max-w-5xl px-2 py-4 sm:px-4 sm:py-6 lg:px-6 lg:py-7">
+          <div
+            className={`max-w-5xl px-2 py-4 sm:px-4 sm:py-6 lg:px-6 lg:py-7 ${
+              isArabic ? "text-right" : "text-left"
+            }`}
+            dir={isArabic ? "rtl" : undefined}
+          >
             <div className="max-w-4xl">
               <h1 className="font-serif text-[2.85rem] leading-[0.98] tracking-[-0.04em] text-[#111827] sm:text-[3.7rem] lg:text-[4.35rem]">
                 {hero.titleLead}

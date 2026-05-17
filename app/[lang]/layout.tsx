@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { BrandMarquee } from "@/components/brand-marquee";
+import { FirstVisitLoader } from "@/components/first-visit-loader";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import {
@@ -105,18 +106,36 @@ export default async function LocaleLayout({
   }
 
   const content = getLocalizedContent(lang as Locale);
+  const keepHeaderLtr = lang === "ar";
 
   return (
     <div lang={lang} dir={content.meta.direction} className="min-h-full flex flex-col">
-      <BrandMarquee brands={content.brands} />
-      <SiteHeader
-        brands={content.brands}
-        brandsLabel={getBrandsMenuLabel(lang as Locale)}
-        locale={lang}
-        nav={content.nav}
-        menuLabel={content.aria.menu}
-        switchLanguageLabel={content.aria.switchLanguage}
-      />
+      <FirstVisitLoader />
+      {keepHeaderLtr ? (
+        <div dir="ltr" className="text-left">
+          <BrandMarquee brands={content.brands} />
+          <SiteHeader
+            brands={content.brands}
+            brandsLabel={getBrandsMenuLabel(lang as Locale)}
+            locale={lang}
+            nav={content.nav}
+            menuLabel={content.aria.menu}
+            switchLanguageLabel={content.aria.switchLanguage}
+          />
+        </div>
+      ) : (
+        <>
+          <BrandMarquee brands={content.brands} />
+          <SiteHeader
+            brands={content.brands}
+            brandsLabel={getBrandsMenuLabel(lang as Locale)}
+            locale={lang}
+            nav={content.nav}
+            menuLabel={content.aria.menu}
+            switchLanguageLabel={content.aria.switchLanguage}
+          />
+        </>
+      )}
       <div className="flex-1">{children}</div>
       <SiteFooter contact={content.contact} footer={content.footer} />
     </div>

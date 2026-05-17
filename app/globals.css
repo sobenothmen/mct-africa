@@ -121,6 +121,64 @@ body {
   }
 }
 
+@keyframes mct-loader {
+  0% {
+    transform: translateX(-40%);
+  }
+  50% {
+    transform: translateX(170%);
+  }
+  100% {
+    transform: translateX(170%);
+  }
+}
+
+@keyframes mct-pulse {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+
+@keyframes mct-flicker {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.mct-stroke {
+  stroke-dasharray: 520;
+  stroke-dashoffset: 520;
+  animation: mct-stroke-draw 1.05s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.mct-stroke-delay {
+  animation-delay: 0.18s;
+}
+
+.mct-stroke-delay-2 {
+  animation-delay: 0.34s;
+}
+
+@keyframes mct-stroke-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes mct-ring {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .hero-fade-up {
   animation: hero-fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
 }

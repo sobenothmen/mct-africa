@@ -69,6 +69,7 @@ export default async function LocalizedHomePage({
           heroHighlights={content.heroHighlights}
           hero={content.hero}
           brands={content.brands}
+          locale={lang}
         />
 
         <section
@@ -91,23 +92,14 @@ export default async function LocalizedHomePage({
                     ))}
                   </div>
                 </div>
-                <div className="grid gap-5 sm:grid-cols-2">
-                  <div className="relative aspect-[4/5] overflow-hidden shadow-xl">
+                <div>
+                  <div className="relative aspect-[4/5] overflow-hidden bg-white shadow-xl">
                     <SiteImage
-                      src="/images/history-growth-photo-1.png"
-                      alt="Photo générée illustrant le lancement et la croissance des premières enseignes de MCT"
+                      src="/images/trajectory-croissance-v2.png"
+                      alt="Une trajectoire de croissance de MCT (2017–2026) avec présence par pays"
                       fill
-                      className="object-cover"
-                      sizes="(max-width: 1024px) 50vw, 480px"
-                    />
-                  </div>
-                  <div className="relative aspect-[4/5] overflow-hidden shadow-xl sm:mt-12">
-                    <SiteImage
-                      src="/images/history-growth-photo-2.png"
-                      alt="Photo générée illustrant la diversification et l'expansion retail de MCT"
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 1024px) 50vw, 480px"
+                      className="object-contain p-3 sm:p-4"
+                      sizes="(max-width: 1024px) 100vw, 520px"
                     />
                   </div>
                 </div>
@@ -116,8 +108,8 @@ export default async function LocalizedHomePage({
               <div className="mt-18 grid gap-10 lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
                 <div className="relative aspect-[16/11] overflow-hidden shadow-xl lg:order-2">
                   <SiteImage
-                    src="/images/history-heritage-photo.png"
-                    alt="Photo générée illustrant la croissance et l'implantation retail de MCT"
+                    src="/images/history-heritage-slide.png"
+                    alt="Visuel de présentation illustrant l'authenticité, la qualité et le développement des franchises en Mauritanie"
                     fill
                     className="object-cover"
                     sizes="(max-width: 1024px) 100vw, 600px"
@@ -149,8 +141,8 @@ export default async function LocalizedHomePage({
               <div className="grid gap-0 lg:grid-cols-[0.95fr_1.05fr]">
                 <div className="relative min-h-[320px] lg:min-h-full">
                   <SiteImage
-                    src="/images/vision-mission.jpg"
-                    alt="MCT vision and mission"
+                    src="/images/vision-mauritania.png"
+                    alt="Mauritanie — vision et mission de MCT"
                     fill
                     className="object-cover"
                     sizes="(max-width: 1024px) 100vw, 560px"
@@ -242,7 +234,7 @@ export default async function LocalizedHomePage({
                         src={member.image}
                         alt={member.name}
                         fill
-                        className={`object-cover ${member.imageClassName ?? "object-top"} transition duration-300 group-hover:scale-[1.02]`}
+                        className="object-cover object-[center_18%] transition duration-300 group-hover:scale-[1.02]"
                         sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 320px"
                       />
                     </div>

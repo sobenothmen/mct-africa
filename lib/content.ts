@@ -194,7 +194,7 @@ function getCountryName(locale: Locale, code: CountryCode) {
 const sharedContact = {
   addressLines: ["Avenue Moktar Ould Daddah", "Nouakchott, Mauritanie"],
   phones: ["+222 36 33 69 19", "+222 36 14 46 14"],
-  emails: ["cherif.med.lotfi@hotmail.com", "mouna.ghedamsi@gmail.com"],
+  emails: ["contact@mct-holding.com", "cherif.med.lotfi@hotmail.com", "mouna.ghedamsi@gmail.com"],
 } as const;
 
 const sharedTeam = [
@@ -212,7 +212,7 @@ const localizedContent = {
       { href: "#vision", label: "Vision & mission" },
       { href: "#enseignes", label: "Partenaires retail" },
       { href: "#equipe", label: "Équipe" },
-      { href: "#contact", label: "Contact" },
+      { href: "/contact", label: "Contact" },
     ],
     heroHighlights: [
       { value: "2", suffix: "", label: "PAYS", detail: "Mauritanie, Sénégal" },
@@ -375,7 +375,7 @@ const localizedContent = {
       { href: "#vision", label: "Vision & mission" },
       { href: "#enseignes", label: "Retail partners" },
       { href: "#equipe", label: "Team" },
-      { href: "#contact", label: "Contact" },
+      { href: "/contact", label: "Contact" },
     ],
     heroHighlights: [
       { value: "2", suffix: "", label: "COUNTRIES", detail: "Mauritania, Senegal" },
@@ -538,7 +538,7 @@ const localizedContent = {
       { href: "#vision", label: "الرؤية والرسالة" },
       { href: "#enseignes", label: "شركاء التجزئة" },
       { href: "#equipe", label: "الفريق" },
-      { href: "#contact", label: "اتصل بنا" },
+      { href: "/contact", label: "اتصل بنا" },
     ],
     heroHighlights: [
       { value: "2", suffix: "", label: "بلدان", detail: "موريتانيا، السنغال" },
