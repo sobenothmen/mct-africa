@@ -15,6 +15,13 @@ export type BrandLoadingInfo = {
   label: string;
 };
 
+function getBrandLoadingLogo(slug: BrandSlug, defaultLogo: string) {
+  if (slug === "beauty-success") return "/images/logos/loading-sent/beauty-success.png";
+  if (slug === "parfois") return "/images/logos/loading-sent/parfois.png";
+  if (slug === "celio") return "/images/logos/loading-sent/celio.png";
+  return defaultLogo;
+}
+
 export function getBrandLoadingAccent(slug: string) {
   if (slug === "celio") return "#111111";
   if (slug === "zippy") return "#ff1212";
@@ -54,7 +61,7 @@ export function getBrandLoadingInfo(lang: string, slug: string): BrandLoadingInf
   return {
     lang,
     slug,
-    logo: brand.logo,
+    logo: getBrandLoadingLogo(slug, brand.logo),
     name: brand.name,
     accent: getBrandLoadingAccent(slug),
     label: getBrandLoadingLabel(),

@@ -24,13 +24,9 @@ export function BrandLoadingSplash({
       style={{ ["--brand-accent" as never]: accent } as React.CSSProperties}
     >
       <div className="brand-loading-stage flex w-full max-w-md flex-col items-center text-center">
-        <div className={`brand-loading-ring ${brandSlug ? `brand-loading-ring-${brandSlug}` : ""}`} aria-hidden>
-          {Array.from({ length: 12 }).map((_, index) => (
-            <span
-              key={index}
-              className="brand-loading-bar"
-              style={{ ["--bar-index" as never]: index } as React.CSSProperties}
-            />
+        <div className={`brand-loading-lines ${brandSlug ? `brand-loading-lines-${brandSlug}` : ""}`} aria-hidden>
+          {Array.from({ length: 5 }).map((_, index) => (
+            <span key={index} className="brand-loading-line" style={{ ["--line-index" as never]: index } as React.CSSProperties} />
           ))}
         </div>
 
