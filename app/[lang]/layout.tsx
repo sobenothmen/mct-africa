@@ -4,6 +4,7 @@ import { BrandMarquee } from "@/components/brand-marquee";
 import { FirstVisitLoader } from "@/components/first-visit-loader";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { BrandRouteLoader } from "@/components/brand-route-loader";
 import {
   getLocalizedContent,
   hasLocale,
@@ -111,6 +112,7 @@ export default async function LocaleLayout({
   return (
     <div lang={lang} dir={content.meta.direction} className="min-h-full flex flex-col">
       <FirstVisitLoader />
+      <BrandRouteLoader />
       {keepHeaderLtr ? (
         <div dir="ltr" className="text-left">
           <BrandMarquee brands={content.brands} />

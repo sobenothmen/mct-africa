@@ -78,6 +78,23 @@ function getBrandMedia(slug: string, fallback: { src: string; alt: string }) {
   } as const;
 }
 
+type BrandGalleryLocation = {
+  city: string;
+  countryFlag: string;
+  venue?: string;
+};
+
+function getBrandGalleryLocations(slug: string): readonly BrandGalleryLocation[] {
+  const nouakchott = { city: "Nouakchott", countryFlag: "🇲🇷" } as const;
+  const dakarSeaPlaza = { city: "Dakar", venue: "Sea Plaza", countryFlag: "🇸🇳" } as const;
+
+  if (slug === "parfois") {
+    return [nouakchott, nouakchott, dakarSeaPlaza];
+  }
+
+  return [nouakchott, nouakchott, nouakchott];
+}
+
 function getBrandCta(locale: Locale) {
   if (locale === "ar") {
     return { primary: "اكتشف المتجر", secondary: "عرض الصور" };
@@ -163,6 +180,7 @@ export default async function BrandPage({
   }
 
   const media = getBrandMedia(brand.slug, { src: brand.image, alt: brand.imageAlt });
+  const galleryLocations = getBrandGalleryLocations(brand.slug);
   const cta = getBrandCta(lang as Locale);
   const servedCountries = brand.countries
     .map((code) => content.heroCountries.find((country) => country.code === code)?.name)
@@ -259,7 +277,10 @@ export default async function BrandPage({
         <div className="mx-auto max-w-[88rem]">
           <div className="border-t border-[var(--border-subtle)] pt-12">
             <div className="grid gap-6 lg:grid-cols-3">
-              {media.gallery.map((photo) => (
+              {media.gallery.map((photo, index) => {
+                const location = galleryLocations[index] ?? galleryLocations[galleryLocations.length - 1];
+
+                return (
                 <figure key={photo.src} className="space-y-4">
                   <div className="relative aspect-[4/3] overflow-hidden bg-[#0b1525]">
                     <SiteImage
@@ -270,9 +291,21 @@ export default async function BrandPage({
                       sizes="(max-width: 1024px) 100vw, 33vw"
                     />
                   </div>
-                  <figcaption className="text-sm font-medium text-slate-700">{photo.alt}</figcaption>
+                  <figcaption className="flex items-center gap-2 text-sm font-medium text-slate-700">
+                    <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 text-slate-700">
+                      <FeatureIcon kind="pin" />
+                    </span>
+                    <span>
+                      {location.city}
+                      {location.venue ? ` · ${location.venue}` : ""}
+                    </span>
+                    <span className="text-base leading-none" aria-label={`Drapeau ${location.city}`}>
+                      {location.countryFlag}
+                    </span>
+                  </figcaption>
                 </figure>
-              ))}
+                );
+              })}
             </div>
           </div>
         </div>
