@@ -71,6 +71,30 @@ function getBrandMedia(slug: string, fallback: { src: string; alt: string }) {
     } as const;
   }
 
+  if (slug === "women-secret") {
+    return {
+      hero: {
+        src: "/images/brands/women-secret/facade-night.png",
+        alt: "Women’Secret - façade illuminée de nuit",
+      },
+      feature: {
+        src: "/images/brands/women-secret/shopping-bag.png",
+        alt: "Women’Secret - sac floral en boutique",
+      },
+      gallery: [
+        {
+          src: "/images/brands/women-secret/facade-night.png",
+          alt: "Women’Secret - façade illuminée de nuit",
+        },
+        {
+          src: "/images/brands/women-secret/shopping-bag.png",
+          alt: "Women’Secret - sac floral en boutique",
+        },
+        { src: "/images/women-secret.jpg", alt: "Women’Secret - intérieur du magasin" },
+      ],
+    } as const;
+  }
+
   return {
     hero: fallback,
     feature: fallback,
